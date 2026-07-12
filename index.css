@@ -3,18 +3,29 @@
   flex-direction: column;
   margin-left: 11px;
   margin-top: 14px;
+  border: 1px solid lightgreen;
+  width: 355px;
+  height: 85vh;
+  padding-left: 6px;
+  padding-top: 4px;
 }
 
 a {
   color: lightgreen;
 }
 
-.text {
+.retro-text {
+  font-family: "Jersey 10", sans-serif;
+  color: #e4e4e4;
+  font-weight: 400;
+  font-size: 24px;
+  font-style: normal;
+  margin-top: 0;
   margin-bottom: 6px;
 }
 
 .logo-anim {
-  margin-bottom: 58px;
+  margin-bottom: 82px;
   
   /*margin-bottom: -5px;
   margin-left: 3px;*/
