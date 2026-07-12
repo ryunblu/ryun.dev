@@ -13,20 +13,40 @@ a {
   margin-bottom: 6px;
 }
 
-#stardust {
+.logo-anim {
+  margin-bottom: 58px;
+}
+
+#logoDust1 {
   width: 1px;
   height: 1px;
   background-color: transparent;
-  box-shadow: 100px 100px #FFF;
-  animation: stardustMove 10s linear infinite;
+  box-shadow: 10px -14px #FFF, 10px -10px #FFF, 10px -6px #FFF, 10px -2px #FFF, 10px 2px #FFF, 10px 6px #FFF, 10px 10px #FFF, 10px 14px #FFF, 12px -13px #FFF, 12px -9px #FFF, 12px -5px #FFF, 12px -1px #FFF, 12px 3px #FFF, 12px 7px #FFF, 12px 11px #FFF, 12px 15px #FFF, 14px -14px #FFF, 14px -10px #FFF, 14px -6px #FFF, 14px -2px #FFF, 14px 2px #FFF, 14px 6px #FFF, 14px 10px #FFF, 14px 14px #FFF, 16px -12px #FFF, 16px -8px #FFF, 16px -4px #FFF, 16px 0 #FFF, 16px 4px #FFF, 16px 8px #FFF, 16px 12px #FFF, 16px 16px #FFF, 18px -7px #FFF, 18px -3px #FFF, 20px -9px #FFF, 20px -5px #FFF, 22px -11px #FFF, 22px -7px #FFF, 24px -12px #FFF, 24px -8px #FFF;
+  animation: logoDust1Move 1s ease-out;
+  animation-fill-mode: forwards;
 }
 
-@keyframes stardustMove {
+#logoDust2 {
+  width: 1px;
+  height: 1px;
+  background-color: transparent;
+  box-shadow: 10px 26px #FFF, 10px 30px #FFF, 10px 34px #FFF, 10px 38px #FFF, 10px 42px #FFF, 10px 46px #FFF, 10px 50px #FFF, 10px 54px #FFF, 12px 27px #FFF, 12px 31px #FFF, 12px 35px #FFF, 12px 39px #FFF, 12px 43px #FFF, 12px 47px #FFF, 12px 51px #FFF, 12px 55px #FFF, 14px 26px #FFF, 14px 30px #FFF, 14px 34px #FFF, 14px 38px #FFF, 14px 42px #FFF, 14px 46px #FFF, 14px 50px #FFF, 14px 54px #FFF, 16px 28px #FFF, 16px 32px #FFF, 16px 36px #FFF, 16px 40px #FFF, 16px 44px #FFF, 16px 48px #FFF, 16px 52px #FFF, 16px 56px #FFF, 18px 33px #FFF, 18px 37px #FFF, 20px 31px #FFF, 20px 35px #FFF, 22px 29px #FFF, 22px 33px #FFF, 24px 28px #FFF, 24px 32px #FFF;
+  animation: logoDust2Move 1s ease-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes logoDust1Move {
   0%{
     transform: translate(0, 0);
   }
-  50%{
-    transform: translate(0px, 100px);
+  100%{
+    transform: translate(0px, 40px);
+  }
+}
+
+@keyframes logoDust2Move {
+  0%{
+    transform: translate(0px, 40px);
   }
   100%{
     transform: translate(0, 0);
