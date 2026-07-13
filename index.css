@@ -5,23 +5,36 @@
   margin-top: 14px;
   border: 1px solid lightgreen;
   width: 355px;
-  height: 85vh;
-  padding-left: 6px;
-  padding-top: 4px;
+  height: calc(100vh - 135px);
+  padding: 6px;
 }
 
 a {
   color: lightgreen;
-}
-
-.retro-text {
-  font-family: "Jersey 10", sans-serif;
-  color: #e4e4e4;
-  font-weight: 400;
-  font-size: 24px;
   font-style: normal;
   margin-top: 0;
   margin-bottom: 6px;
+  text-decoration: none;
+}
+
+p {
+  font-style: normal;
+  margin-top: 0;
+  margin-bottom: 6px;
+}
+
+.category-title {
+  font-weight: bolder;
+  background-color: #004b0b;
+}
+
+.list-item {
+  
+}
+
+.list-item:hover {
+  font-weight: bold;
+  background-color: #004b0b;
 }
 
 .logo-anim {
