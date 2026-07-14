@@ -81,7 +81,19 @@ p {
   42px -13px #FFF, 42px -9px #FFF, 42px -5px #FFF, 42px -1px #FFF, 42px 3px #FFF, 42px 7px #FFF,
   44px -14px #FFF, 44px -10px #FFF, 44px -6px #FFF, 44px -2px #FFF,
   46px -14px #FFF, 46px -10px #FFF,
-  48px -14px #FFF;
+  48px -14px #FFF,
+  /*u*/
+  50px -13px #FFF, 50px -9px #FFF, 50px -5px #FFF, 50px -1px #FFF, 50px 3px #FFF, 50px 7px #FFF, 50px 11px #FFF,
+  52px -13px #FFF, 52px -9px #FFF, 52px -5px #FFF, 52px -1px #FFF, 52px 3px #FFF, 52px 7px #FFF, 52px 11px #FFF, 52px 15px #FFF,
+  54px -15px #FFF, 54px -11px #FFF, 54px -7px #FFF, 54px -3px #FFF, 54px 1px #FFF, 54px 5px #FFF, 54px 9px #FFF, 54px 13px #FFF, 54px 17px #FFF,
+  56px -15px #FFF, 56px -11px #FFF, 56px -7px #FFF, 56px -3px #FFF, 56px 1px #FFF, 56px 5px #FFF, 56px 9px #FFF, 56px 13px #FFF, 56px 17px #FFF,
+  58px 12px #FFF, 58px 16px #FFF,
+  60px 11px #FFF, 60px 15px #FFF,
+  62px 9px #FFF, 62px 13px #FFF,
+  64px -14px #FFF, 64px -10px #FFF, 64px -6px #FFF, 64px -2px #FFF, 64px 2px #FFF, 64px 6px #FFF, 64px 10px #FFF, 64px 14px #FFF, 64px 18px #FFF,
+  66px -14px #FFF, 66px -10px #FFF, 66px -6px #FFF, 66px -2px #FFF, 66px 2px #FFF, 66px 6px #FFF, 66px 10px #FFF, 66px 14px #FFF, 66px 18px #FFF,
+  68px -15px #FFF, 68px -11px #FFF, 68px -7px #FFF, 68px -3px #FFF, 68px 1px #FFF, 68px 5px #FFF, 68px 9px #FFF, 68px 13px #FFF, 68px 17px #FFF,
+  70px -15px #FFF, 70px -11px #FFF, 70px -7px #FFF, 70px -3px #FFF, 70px 1px #FFF, 70px 5px #FFF, 70px 9px #FFF, 70px 13px #FFF, 70px 17px #FFF;
   animation: logoDust1Move 1s ease-out;
   animation-fill-mode: forwards;
 }
@@ -111,7 +123,19 @@ p {
   42px 27px #FFF, 42px 31px #FFF, 42px 35px #FFF, 42px 39px #FFF, 42px 43px #FFF, 42px 47px #FFF,
   44px 26px #FFF, 44px 30px #FFF, 44px 34px #FFF, 44px 38px #FFF,
   46px 26px #FFF, 46px 30px #FFF,
-  48px 26px #FFF;
+  48px 26px #FFF,
+  /*u*/
+  50px 27px #FFF, 50px 31px #FFF, 50px 35px #FFF, 50px 39px #FFF, 50px 43px #FFF, 50px 47px #FFF, 50px 51px #FFF,
+  52px 27px #FFF, 52px 31px #FFF, 52px 35px #FFF, 52px 39px #FFF, 52px 43px #FFF, 52px 47px #FFF, 52px 51px #FFF, 52px 55px #FFF,
+  54px 25px #FFF, 54px 29px #FFF, 54px 33px #FFF, 54px 37px #FFF, 54px 41px #FFF, 54px 45px #FFF, 54px 49px #FFF, 54px 53px #FFF, 54px 57px #FFF,
+  56px 25px #FFF, 56px 29px #FFF, 56px 33px #FFF, 56px 37px #FFF, 56px 41px #FFF, 56px 45px #FFF, 56px 49px #FFF, 56px 53px #FFF, 56px 57px #FFF,
+  58px 52px #FFF, 58px 56px #FFF,
+  60px 51px #FFF, 60px 55px #FFF,
+  62px 49px #FFF, 62px 53px #FFF,
+  64px 26px #FFF, 64px 30px #FFF, 64px 34px #FFF, 64px 38px #FFF, 64px 42px #FFF, 64px 46px #FFF, 64px 50px #FFF, 64px 54px #FFF, 64px 58px #FFF,
+  66px 26px #FFF, 66px 30px #FFF, 66px 34px #FFF, 66px 38px #FFF, 66px 42px #FFF, 66px 46px #FFF, 66px 50px #FFF, 66px 54px #FFF, 66px 58px #FFF,
+  68px 25px #FFF, 68px 29px #FFF, 68px 33px #FFF, 68px 37px #FFF, 68px 41px #FFF, 68px 45px #FFF, 68px 49px #FFF, 68px 53px #FFF, 68px 57px #FFF,
+  70px 25px #FFF, 70px 29px #FFF, 70px 33px #FFF, 70px 37px #FFF, 70px 41px #FFF, 70px 45px #FFF, 70px 49px #FFF, 70px 53px #FFF, 70px 57px #FFF;
   animation: logoDust2Move 1s ease-out;
   animation-fill-mode: forwards;
 }
