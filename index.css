@@ -1,10 +1,15 @@
-﻿.container {
+﻿.left-col {
+  min-width: max-content;
+}
+
+.container {
   display: flex;
   flex-direction: column;
   margin-left: 11px;
+  margin-right: 13px;
   margin-top: 14px;
   border: 1px solid lightgreen;
-  width: 355px;
+  max-width: 355px;
   height: calc(100vh - 135px);
   padding: 6px;
 }
@@ -42,6 +47,13 @@ p {
   
   /*margin-bottom: -5px;
   margin-left: 3px;*/
+}
+
+.footer-text {
+  margin-top: 8px;
+  margin-left: 11px;
+  margin-right: 13px;
+  font-size: 12px;
 }
 
 #logoDust1 {
