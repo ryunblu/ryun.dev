@@ -9,12 +9,12 @@
   margin-right: 13px;
   margin-top: 14px;
   border: 1px solid lightgreen;
-  max-width: 191px;
+  width: 191px;
   height: calc(100vh - 211px);
   padding: 6px;
 }
 
-.container2 {
+#main {
   display: flex;
   flex-direction: column;
   margin-right: 15px;
@@ -45,11 +45,10 @@ p {
 }
 
 .list-item {
-
+  cursor: pointer;
 }
 
 .list-item:hover {
-  font-weight: bold;
   background-color: #004b0b;
 }
 
@@ -73,8 +72,10 @@ p {
 }
 
 .footer-text {
+  display: flex;
+  justify-content: center;
   margin-top: 8px;
-  margin-left: 11px;
+  margin-left: 10px;
   margin-right: 13px;
   font-size: 12px;
 }
