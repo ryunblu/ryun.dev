@@ -1,23 +1,23 @@
-let mainVisible = false;
+// Elements (script type is module so we good)
 const main = document.getElementById("main");
 const header = document.getElementById("header");
 const aboutButton = document.getElementById("about-button");
 const backButton = document.getElementById("back-button");
-let isMobile = innerWidth < 600;
 
 aboutButton.onclick = () => {toggleMain()}
-backButton.onclick = () => {toggleMain()}
+backButton.onclick = () => {toggleMain()} 
 
 main.style.display = "none";
-
 dealWithMobile();
+
+// Code to deal with mobile displays
 window.addEventListener("resize", () => {dealWithMobile()})
-
+function isMobile() {
+    return innerWidth < 600;
+}
 function dealWithMobile() {
-    isMobile = innerWidth < 600;
-
-    if (mainVisible) {
-        if (isMobile) {
+    if (main.style.display === "block") {
+        if (isMobile()) {
             header.style.display = "none";
             main.style.width = "100vw";
         }
@@ -28,7 +28,7 @@ function dealWithMobile() {
     }
     else {
         header.style.display = "block";
-        if (isMobile) {
+        if (isMobile()) {
             main.style.width = "100vw";
         }
         else {
@@ -37,14 +37,13 @@ function dealWithMobile() {
     }
 }
 
+// Display main window or not
 function toggleMain() {
-    if (!mainVisible) {
-        mainVisible = true;
+    if (main.style.display === "none") {
         main.style.display = "block";
         dealWithMobile();
     }
     else {
-        mainVisible = false;
         main.style.display = "none";
         dealWithMobile();
     }
