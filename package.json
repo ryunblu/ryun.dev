@@ -2,13 +2,11 @@
   "name": "ryun-dev",
   "version": "1.0.0",
   "description": "",
-  "main": "dist/index.js",
+  "main": "backend.js",
   "scripts": {
-    "build": "tsc"
+    "build": ""
   },
   "dependencies": {},
-  "devDependencies": {
-    "typescript": "^5.5.3"
-  },
+  "devDependencies": {},
   "private": true
 }
