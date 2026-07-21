@@ -9,14 +9,9 @@ const backButton = document.getElementById("back-button");
 aboutButton.onclick = () => {toggleMain()}
 backButton.onclick = () => {toggleMain()}
 
-// Opening animation
-window.addEventListener('load', () => {
-    let startingWidth = startAnim.style.width;
-    let startingHeight = startAnim.style.height;
-    
-    let animTime = 2500;
-    
-    const anim = startAnim.animate(
+// Reusable window animation
+function animWindow(elem, animTime) {
+    return elem.animate(
         [
             {opacity: 0, transform: "scale(0.8)", easing: "steps(3, end)"},
             {opacity: 1, transform: "scale(1)", offset: 0.1, ease: "easeIn"},
@@ -28,6 +23,13 @@ window.addEventListener('load', () => {
             fill: "forwards",
         }
     );
+}
+
+// Opening animation
+window.addEventListener('load', () => {
+    let animTime = 2500;
+    
+    const anim = animWindow(startAnim, animTime);
     const hddImageSwapAnim = HDDIcon2.animate(
         [
             {opacity: 0},
