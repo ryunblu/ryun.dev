@@ -18,9 +18,9 @@ window.addEventListener('load', () => {
     
     const anim = startAnim.animate(
         [
-            {opacity: 0, easing: "steps(4)"},
-            {opacity: 1, transform: "scale(1)", offset: 0.2, ease: "easeIn"},
-            {opacity: 1, transform: "scale(1)", offset: 0.9, easing: "steps(2)"},
+            {opacity: 0, transform: "scale(0.8)", easing: "steps(3, end)"},
+            {opacity: 1, transform: "scale(1)", offset: 0.1, ease: "easeIn"},
+            {opacity: 1, transform: "scale(1)", offset: 0.9, easing: "steps(2, end)"},
             {opacity: 0, transform: "scale(0.9)"},
         ],
         {
