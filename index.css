@@ -13,12 +13,12 @@ p {
 }
 
 #start-anim {
-  opacity: 0;
   color: lightgreen;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 98vh;
+  opacity: 0;
   transform: scale(0.8);
 }
 
@@ -71,6 +71,8 @@ p {
   width: 191px;
   height: calc(100vh - 211px);
   padding: 6px;
+  opacity: 0;
+  transform: scale(0.8);
 }
 
 .category-title {
@@ -103,6 +105,8 @@ p {
   width: calc(100vw - 270px);
   height: calc(100vh - 142px);
   padding: 6px;
+  opacity: 0;
+  transform: scale(0.8);
 }
 
 #logoDust1 {
