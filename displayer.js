@@ -10,8 +10,8 @@ const backButton = document.getElementById("back-button");
 aboutButton.onclick = () => {toggleMain()}
 backButton.onclick = () => {toggleMain()}
 
-// Reusable window animations
-function animWindowInOut(elem, animTime, startingScale) {
+// Reusable animations
+function animInOut(elem, animTime, startingScale) {
     return elem.animate(
         [
             {opacity: 0, transform: `scale(${startingScale})`, easing: "steps(3, end)"},
@@ -25,7 +25,7 @@ function animWindowInOut(elem, animTime, startingScale) {
         }
     );
 }
-function animWindowIn(elem, animTime, startingScale) {
+function animIn(elem, animTime, startingScale) {
     return elem.animate(
         [
             {opacity: 0, transform: `scale(${startingScale})`, easing: "steps(3, end)"},
@@ -39,7 +39,7 @@ function animWindowIn(elem, animTime, startingScale) {
         }
     );
 }
-function animWindowOut(elem, animTime, endingScale) {
+function animOut(elem, animTime, endingScale) {
     return elem.animate(
         [
             {opacity: 1, transform: "scale(1)", easing: "steps(3, end)"},
@@ -56,8 +56,8 @@ function animWindowOut(elem, animTime, endingScale) {
 window.addEventListener('load', () => {
     let animTime = 2500;
     
-    const anim = animWindowInOut(startAnim, animTime, 0.8);
-    const hddImageSwapAnim = HDDIcon2.animate(
+    const anim = animInOut(startAnim, animTime, 0.8);
+    HDDIcon2.animate(
         [
             {opacity: 0},
             {opacity: 0, offset: 0.399},
@@ -84,11 +84,21 @@ window.addEventListener('load', () => {
     );
 })
 
+// Show header w/left nav anim
 function showHeader() {
     if (header.style.display === "none" || header.style.display === "") {
-        let animTime = 2500;
+        let animTime = 4500;
         header.style.display = "block";
-        animWindowIn(leftNav, animTime, 0.9);
+        animIn(leftNav, animTime, 0.9);
+        // Animate each child list item
+        let waitTime = 40;
+        for (const child of leftNav.children) {
+            child.getAnimations().forEach(anim => {anim.cancel()})
+            child.style.opacity = "0";
+            child.style.transform = "scale(0.9)";
+            setTimeout(() => {animIn(child, animTime, 0.9);}, waitTime)
+            waitTime += 60;
+        }
     }
 }
 
@@ -120,15 +130,15 @@ function dealWithMobile() {
 
 // Display main window or not
 function toggleMain() {
-    if (main.style.display === "none") {
+    if (main.style.display === "none" || main.style.display === "") {
         main.style.display = "block";
         let animTime = 2500;
-        animWindowIn(main, animTime, 0.9);
+        animIn(main, animTime, 0.9);
         dealWithMobile();
     }
     else {
         let animTime = 250;
-        const anim = animWindowOut(main, animTime, 0.9);
+        const anim = animOut(main, animTime, 0.9);
         anim.finished.then(() => {
             main.style.display = "none";
             dealWithMobile();
