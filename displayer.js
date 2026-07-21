@@ -1,14 +1,57 @@
-// Elements (script type is module so we good)
+// Elements
+const startAnim = document.getElementById("start-anim");
+const HDDIcon2 = document.getElementById("hdd-icon-2")
 const main = document.getElementById("main");
 const header = document.getElementById("header");
 const aboutButton = document.getElementById("about-button");
 const backButton = document.getElementById("back-button");
 
 aboutButton.onclick = () => {toggleMain()}
-backButton.onclick = () => {toggleMain()} 
+backButton.onclick = () => {toggleMain()}
 
-main.style.display = "none";
-dealWithMobile();
+// Opening animation
+window.addEventListener('load', () => {
+    let startingWidth = startAnim.style.width;
+    let startingHeight = startAnim.style.height;
+    
+    let animTime = 2500;
+    
+    const anim = startAnim.animate(
+        [
+            {opacity: 0, easing: "steps(4)"},
+            {opacity: 1, transform: "scale(1)", offset: 0.2, ease: "easeIn"},
+            {opacity: 1, transform: "scale(1)", offset: 0.9, easing: "steps(2)"},
+            {opacity: 0, transform: "scale(0.9)"},
+        ],
+        {
+            duration: animTime,
+            fill: "forwards",
+        }
+    );
+    const hddImageSwapAnim = HDDIcon2.animate(
+        [
+            {opacity: 0},
+            {opacity: 0, offset: 0.399},
+            {opacity: 1, offset: 0.4},
+            {opacity: 1, offset: 0.499},
+            {opacity: 0, offset: 0.5},
+            {opacity: 0, offset: 0.799},
+            {opacity: 1, offset: 0.8},
+            {opacity: 1}
+        ],
+        {
+            duration: animTime,
+            fill: "forwards",
+        }
+    )
+
+    anim.finished.then(
+        () => {
+            startAnim.style.display = "none";
+            dealWithMobile();
+        }
+    )
+})
 
 // Code to deal with mobile displays
 window.addEventListener("resize", () => {dealWithMobile()})

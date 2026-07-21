@@ -12,7 +12,33 @@ p {
   margin-bottom: 6px;
 }
 
+#start-anim {
+  opacity: 0;
+  color: lightgreen;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 98vh;
+  transform: scale(0.7);
+}
+
+#start-anim-border {
+  display: grid;
+  border: 1px solid lightgreen;
+  height: 115px;
+  width: 70px
+}
+
+.HDDIcon {
+  grid-column: 1;
+  grid-row: 1;
+  height: 100px;
+  width: auto;
+  margin-bottom: 4px
+}
+
 #header {
+  display: none;
   min-width: max-content;
 }
 
@@ -70,7 +96,7 @@ p {
 }
 
 #main {
-  display: flex;
+  display: none;
   flex-direction: column;
   margin-left: 10px;
   margin-right: 15px;
@@ -119,7 +145,7 @@ p {
   66px -14px #FFF, 66px -10px #FFF, 66px -6px #FFF, 66px -2px #FFF, 66px 2px #FFF, 66px 6px #FFF, 66px 10px #FFF, 66px 14px #FFF, 66px 18px #FFF,
   68px -15px #FFF, 68px -11px #FFF, 68px -7px #FFF, 68px -3px #FFF, 68px 1px #FFF, 68px 5px #FFF, 68px 9px #FFF, 68px 13px #FFF, 68px 17px #FFF,
   70px -15px #FFF, 70px -11px #FFF, 70px -7px #FFF, 70px -3px #FFF, 70px 1px #FFF, 70px 5px #FFF, 70px 9px #FFF, 70px 13px #FFF, 70px 17px #FFF;
-  animation: logoDust1Move 1s ease-out;
+  animation: logoDust1Move 1.2s ease-out;
   animation-fill-mode: forwards;
 }
 
@@ -161,7 +187,7 @@ p {
   66px 26px #FFF, 66px 30px #FFF, 66px 34px #FFF, 66px 38px #FFF, 66px 42px #FFF, 66px 46px #FFF, 66px 50px #FFF, 66px 54px #FFF, 66px 58px #FFF,
   68px 25px #FFF, 68px 29px #FFF, 68px 33px #FFF, 68px 37px #FFF, 68px 41px #FFF, 68px 45px #FFF, 68px 49px #FFF, 68px 53px #FFF, 68px 57px #FFF,
   70px 25px #FFF, 70px 29px #FFF, 70px 33px #FFF, 70px 37px #FFF, 70px 41px #FFF, 70px 45px #FFF, 70px 49px #FFF, 70px 53px #FFF, 70px 57px #FFF;
-  animation: logoDust2Move 1s ease-out;
+  animation: logoDust2Move 1.2s ease-out;
   animation-fill-mode: forwards;
 }
 
