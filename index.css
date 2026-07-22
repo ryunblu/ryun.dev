@@ -71,6 +71,7 @@ p {
   width: 191px;
   height: calc(100vh - 211px);
   padding: 6px;
+  overflow-y: auto;
   opacity: 0;
   transform: scale(0.8);
 }
@@ -84,8 +85,10 @@ p {
   cursor: pointer;
 }
 
-.list-item:hover {
-  background-color: #004b0b;
+@media (hover: hover) {
+  .list-item:hover {
+    background-color: #004b0b;
+  }
 }
 
 .footer-text {
