@@ -16,7 +16,7 @@ project1Button.onclick = () => {toggleMain(false, 1)}
 let pageActive = -1;
 
 // Reusable animations
-function animIn(elem, animTime, startingScale) {
+function animIn(elem, animTime, startingScale, delay = 0) {
     elem.getAnimations().forEach(anim => {anim.cancel()});
     return elem.animate(
         [
@@ -24,12 +24,13 @@ function animIn(elem, animTime, startingScale) {
             {opacity: 1, transform: "scale(1)"},
         ],
         {
+            delay: delay,
             duration: animTime,
             fill: "forwards",
         }
     );
 }
-function animOut(elem, animTime, endingScale) {
+function animOut(elem, animTime, endingScale, delay = 0) {
     elem.getAnimations().forEach(anim => {anim.cancel()});
     return elem.animate(
         [
@@ -37,6 +38,7 @@ function animOut(elem, animTime, endingScale) {
             {opacity: 0, transform: `scale(${endingScale})`},
         ],
         {
+            delay: delay,
             duration: animTime,
             fill: "forwards",
         }
@@ -49,7 +51,7 @@ function animInChildren(parent, animTime) {
         child.getAnimations().forEach(anim => {anim.cancel()})
         child.style.opacity = "0";
         child.style.transform = "scale(0.9)";
-        setTimeout(() => {animIn(child, animTime, 0.9);}, wait)
+        animIn(child, animTime, 0.9, wait);
         wait += 80;
     }
 }
@@ -151,7 +153,7 @@ function toggleMain(first = false, page = 0) {
                 aboutButton.classList.add("list-item-selected")
                 setTimeout(() => {
                     pageMyself.style.display = "flex";
-                    animIn(pageMyself, 200, 0.95);
+                    animIn(pageMyself, 200, 0.98);
                     animInChildren(pageMyself, 600);
                 }, 200);
                 break;
@@ -160,7 +162,7 @@ function toggleMain(first = false, page = 0) {
                 project1Button.classList.add("list-item-selected");
                 setTimeout(() => {
                     pageSnpda.style.display = "flex";
-                    animIn(pageSnpda, 200, 0.95);
+                    animIn(pageSnpda, 200, 0.98);
                     animInChildren(pageSnpda, 600);
                 }, 200);
                 break;
