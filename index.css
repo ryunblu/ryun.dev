@@ -15,7 +15,7 @@ p {
 #header {
   display: none;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: right;
   margin: 5px 11px 0 11px;
   border: 1px solid lightgreen;
   opacity: 0;
@@ -37,18 +37,23 @@ p {
 }
 
 #start-anim {
+  margin-top: 30px;
   color: lightgreen;
   display: grid;
+  opacity: 0;
+  transform: scale(0.9);
 }
 
 .HDD-icon {
   grid-column: 1;
   grid-row: 1;
-  height: 39px;
+  height: 80px;
   width: auto;
 }
 
 #cat-area {
+  display: flex;
+  justify-content: center;
   height: 142px;
 }
 
@@ -68,7 +73,7 @@ p {
   padding: 6px;
   overflow-y: auto;
   opacity: 0;
-  transform: scale(0.9);
+  transform: scale(0.95);
 }
 
 .category-title {
@@ -103,7 +108,7 @@ p {
   padding: 6px;
   overflow-y: auto;
   opacity: 0;
-  transform: scale(0.9);
+  transform: scale(0.95);
 }
 
 #page-myself {
