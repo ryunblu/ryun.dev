@@ -9,49 +9,61 @@
     <title>ryun.dev</title>
 </head>
 <body style="background-color: #212421; color: #eee;">
-    <div id="start-anim">
-        <div id="start-anim-border"> <!--Images exported with width 494px and pixelate 18.4-->
-            <img src="HDD_icon_2.png" class="HDDIcon" id="hdd-icon-2" alt="HDD icon head position 2"/>
-            <img src="HDD_icon_1.png" class="HDDIcon" alt="HDD icon head position 1"/>
-            <p style="display: flex; justify-content: center; margin-top: -7px; font-size:85%;">please wait</p>
+    <header id="header">
+        <div id="start-anim">
+            <!--Images exported with width 494px and pixelate 18.4-->
+            <img src="HDD_icon_2.png" class="HDD-icon" id="hdd-icon-2" alt="HDD icon head position 2"/>
+            <img src="HDD_icon_1.png" class="HDD-icon" alt="HDD icon head position 1"/>
         </div>
-    </div>
-    
-    <div style="display: flex; flex-direction: row">
-        <header id="header">
-            <!--<img style="position: fixed; margin-top: 11px; margin-left: 7px; width: 175px; height: auto;" src="logo.png" height="825" width="2310" alt="<logo>"/>-->
-            <div class="logo-anim">
-                <div id='logoDust1'></div>
-                <div id='logoDust2'></div>
-            </div>
-            <div class="logoOval"></div>
 
-            <div id="left-nav">
-                <p style="font-weight: bolder; line-height: 120%">Hey hey, welcome to my <br>corner of the internet ᓚᘏᗢ</p>
-                <p class="category-title">&nbsp;Info</p>
-                <a class="list-item" id="about-button" role="button">&nbsp;&nbsp;Myself</a>
-                <div style="display: flex; flex-direction: row">
-                    <p style="flex-basis: 64%" class="category-title">&nbsp;Socials</p>
-                    <p style="font-weight: normal; margin-left: auto;" class="category-title">@ryunblu&nbsp;</p>
-                </div>
-                <a class="list-item" href="https://github.com/ryunblu" target="_blank" rel="noopener noreferrer">&nbsp;&nbsp;GitHub</a>
-                <a class="list-item" href="https://x.com/ryunblu" target="_blank" rel="noopener noreferrer">&nbsp;&nbsp;Twitter</a>
-                <a class="list-item" href="https://www.youtube.com/@ryunblu" target="_blank" rel="noopener noreferrer">&nbsp;&nbsp;YouTube</a>
-                <p class="category-title">&nbsp;Blog</p>
-                <a class="list-item" href="https://cephalodae.com" target="_blank" rel="noopener noreferrer">&nbsp;&nbsp;Cephalodae</a>
-                <p class="category-title">&nbsp;Projects</p>
-                <a class="list-item" href="https://github.com/ryunblu/SN-PDA" target="_blank" rel="noopener noreferrer">&nbsp;&nbsp;SN-PDA</a>
-                <p class="category-title">&nbsp;Friends</p>
-                <a class="list-item" href="https://smileyjkr.com" target="_blank" rel="noopener noreferrer">&nbsp;SmileyJKR.com</a>
+        <div style="display: flex; flex-direction: column">
+            <p id="header-text-1">site last modified July 23, 2026</p>
+            <div style="display: flex; flex-direction: row" id="header-text-2">
+                <p>view the latest changes&nbsp;</p>
+                <a href="https://github.com/ryunblu/ryun.dev/commit/master" target="_blank" rel="noopener noreferrer">here</a>
             </div>
-            <p class="footer-text">site last modified July 21, 2026</p>
-        </header>
-        
+        </div>
+    </header>
+
+    <section id="cat-area">
+
+    </section>
+
+    <main id="body">
+        <div id="left-nav">
+            <p style="font-weight: bolder; line-height: 120%">Hey hey, welcome to my <br>corner of the internet ᓚᘏᗢ</p>
+            <p class="category-title">&nbsp;Info</p>
+            <a class="list-item" id="about-button" role="button">&nbsp;&nbsp;Myself</a>
+            <div style="display: flex; flex-direction: row">
+                <p style="flex-basis: 64%" class="category-title">&nbsp;Socials</p>
+                <p style="font-weight: normal; margin-left: auto;" class="category-title">@ryunblu&nbsp;</p>
+            </div>
+            <a class="list-item" href="https://github.com/ryunblu" target="_blank" rel="noopener noreferrer">&nbsp;&nbsp;GitHub</a>
+            <a class="list-item" href="https://x.com/ryunblu" target="_blank" rel="noopener noreferrer">&nbsp;&nbsp;Twitter</a>
+            <a class="list-item" href="https://www.youtube.com/@ryunblu" target="_blank" rel="noopener noreferrer">&nbsp;&nbsp;YouTube</a>
+            <p class="category-title">&nbsp;Blog</p>
+            <a class="list-item" href="https://cephalodae.com" target="_blank" rel="noopener noreferrer">&nbsp;&nbsp;Cephalodae</a>
+            <p class="category-title">&nbsp;Projects</p>
+            <a class="list-item" href="https://github.com/ryunblu/SN-PDA" target="_blank" rel="noopener noreferrer">&nbsp;&nbsp;SN-PDA</a>
+            <p class="category-title">&nbsp;Friends</p>
+            <a class="list-item" href="https://smileyjkr.com" target="_blank" rel="noopener noreferrer">&nbsp;SmileyJKR.com</a>
+        </div>
+
         <main id="main">
             <button id="back-button" style="width: 50px">back</button>
             <p>hold up - this part is still under construction D:</p>
         </main>
-    </div>
+    </main>
+
+    <footer id="footer">
+        <!--<img style="position: fixed; margin-top: 11px; margin-left: 7px; width: 175px; height: auto;" src="logo.png" height="825" width="2310" alt="<logo>"/>-->
+        <div id="logo-anim">
+            <div>
+                <div id='logo-dust-1'></div>
+                <div id='logo-dust-2'></div>
+            </div>
+        </div>
+    </footer>
 
     <script type="module" src="displayer.js"></script>
 </body>

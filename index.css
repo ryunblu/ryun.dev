@@ -12,68 +12,63 @@ p {
   margin-bottom: 6px;
 }
 
-#start-anim {
-  color: lightgreen;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 98vh;
-  opacity: 0;
-  transform: scale(0.8);
-}
-
-#start-anim-border {
-  display: grid;
-  border: 1px solid lightgreen;
-  height: 115px;
-  width: 70px
-}
-
-.HDDIcon {
-  grid-column: 1;
-  grid-row: 1;
-  height: 100px;
-  width: auto;
-  margin-bottom: 4px
-}
-
 #header {
   display: none;
-  min-width: max-content;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 5px 11px 0 11px;
+  border: 1px solid lightgreen;
+  opacity: 0;
+  transform: scale(0.9);
 }
 
-.logo-anim {
-  transform: translate(15px, 46px);
-
-  /*margin-bottom: -5px;
-  margin-left: 3px;*/
+#header-text-1 {
+  display: flex;
+  justify-content: right;
+  margin: 5px 5px 0 0;
+  font-size: 12px;
 }
 
-.logoOval {
-  margin-top: 35px;
-  margin-left: 11px;
-  border: 1px solid lightgrey;
-  border-radius: 50%;
-  width: 200px;
-  height: 100px;
+#header-text-2 {
+  display: flex;
+  justify-content: right;
+  margin: 0 5px 0 0;
+  font-size: 12px;
+}
 
-  animation: logoOvalFadeIn 1s ease-out;
-  animation-fill-mode: forwards;
+#start-anim {
+  color: lightgreen;
+  display: grid;
+}
+
+.HDD-icon {
+  grid-column: 1;
+  grid-row: 1;
+  height: 39px;
+  width: auto;
+}
+
+#cat-area {
+  height: 142px;
+}
+
+#body {
+  display: flex;
+  flex-direction: row
 }
 
 #left-nav {
-  display: flex;
+  display: none;
   flex-direction: column;
-  margin-left: 11px;
-  margin-right: 13px;
-  margin-top: 14px;
+  margin: 0 5px 0 11px;
   border: 1px solid lightgreen;
-  width: 191px;
-  height: calc(100vh - 211px);
+  min-width: max-content;
+  max-width: max-content;
+  height: calc(100vh - 280px);
   padding: 6px;
   overflow-y: auto;
   opacity: 0;
-  transform: scale(0.8);
+  transform: scale(0.9);
 }
 
 .category-title {
@@ -91,28 +86,30 @@ p {
   }
 }
 
-.footer-text {
-  display: flex;
-  justify-content: center;
-  margin: 10px 13px 0 10px;
-  font-size: 12px;
-}
-
 #main {
   display: none;
   flex-direction: column;
-  margin-left: 10px;
-  margin-right: 15px;
-  margin-top: 84px;
+  margin: 0 11px 0 0;
   border: 1px solid lightgreen;
-  width: calc(100vw - 270px);
-  height: calc(100vh - 142px);
+  width: 100vw;
+  height: calc(100vh - 280px);
   padding: 6px;
+  overflow-y: auto;
   opacity: 0;
-  transform: scale(0.8);
+  transform: scale(0.9);
 }
 
-#logoDust1 {
+#footer {
+  display: none;
+}
+
+#logo-anim {
+  display: flex;
+  justify-content: center;
+  transform: translate(-50px, -10px);
+}
+
+#logo-dust-1 {
   width: 1px;
   height: 1px;
   background-color: transparent;
@@ -154,7 +151,7 @@ p {
   animation-fill-mode: forwards;
 }
 
-#logoDust2 {
+#logo-dust-2 {
   width: 1px;
   height: 1px;
   background-color: transparent;
@@ -198,27 +195,22 @@ p {
 
 @keyframes logoDust1Move {
   0%{
+    opacity: 0;
     transform: translate(0, 0);
   }
   100%{
+    opacity: 1;
     transform: translate(0px, 40px);
   }
 }
 
 @keyframes logoDust2Move {
   0%{
+    opacity: 0;
     transform: translate(0px, 40px);
   }
   100%{
-    transform: translate(0, 0);
-  }
-}
-
-@keyframes logoOvalFadeIn {
-  0%{
-    opacity: 0;
-  }
-  100%{
     opacity: 1;
+    transform: translate(0, 0);
   }
 }
