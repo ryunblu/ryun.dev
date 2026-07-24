@@ -18,6 +18,8 @@ let pageActive = -1;
 // Reusable animations
 function animIn(elem, animTime, startingScale, delay = 0) {
     elem.getAnimations().forEach(anim => {anim.cancel()});
+    elem.style.opacity = 1;
+    elem.style.transform = "scale(1)";
     return elem.animate(
         [
             {opacity: 0, transform: `scale(${startingScale})`, easing: "steps(3, end)"},
@@ -26,12 +28,14 @@ function animIn(elem, animTime, startingScale, delay = 0) {
         {
             delay: delay,
             duration: animTime,
-            fill: "both",
+            fill: "backwards",
         }
     );
 }
 function animOut(elem, animTime, endingScale, delay = 0) {
     elem.getAnimations().forEach(anim => {anim.cancel()});
+    elem.style.opacity = 0;
+    elem.style.transform = `scale(${endingScale})`;
     return elem.animate(
         [
             {opacity: 1, transform: "scale(1)", easing: "steps(3, end)"},
@@ -40,7 +44,7 @@ function animOut(elem, animTime, endingScale, delay = 0) {
         {
             delay: delay,
             duration: animTime,
-            fill: "both",
+            fill: "backwards",
         }
     );
 }
