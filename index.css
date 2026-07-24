@@ -67,8 +67,7 @@ p {
   flex-direction: column;
   margin: 0 5px 0 11px;
   border: 1px solid lightgreen;
-  min-width: max-content;
-  max-width: max-content;
+  width: 226px;
   height: calc(100vh - 280px);
   padding: 6px;
   overflow-y: auto;

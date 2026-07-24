@@ -45,11 +45,11 @@ function animOut(elem, animTime, endingScale, delay = 0) {
     );
 }
 // Animate each child list item w/delay between
-function animInChildren(parent, animTime) {
+function animInChildren(parent, animTime, startingScale) {
     let wait = 100;
     for (const child of parent.children) {
         child.getAnimations().forEach(anim => {anim.cancel()})
-        animIn(child, animTime, 0.9, wait);
+        animIn(child, animTime, startingScale, wait);
         wait += 80;
     }
 }
@@ -97,7 +97,7 @@ function showLeftNav() {
         let animTime = 600;
         leftNav.style.display = "flex";
         animIn(leftNav, animTime, 0.95);
-        animInChildren(leftNav, animTime)
+        animInChildren(leftNav, animTime, 0.9)
     }
 }
 
@@ -155,7 +155,7 @@ function toggleMain(first = false, page = 0) {
                 setTimeout(() => {
                     pageMyself.style.display = "flex";
                     animIn(pageMyself, 200, 0.98);
-                    animInChildren(pageMyself, 600);
+                    animInChildren(pageMyself, 500, 0.95);
                 }, loadDelay);
                 break;
             case 1:
@@ -164,7 +164,7 @@ function toggleMain(first = false, page = 0) {
                 setTimeout(() => {
                     pageSnpda.style.display = "flex";
                     animIn(pageSnpda, 200, 0.98);
-                    animInChildren(pageSnpda, 600);
+                    animInChildren(pageSnpda, 500, 0.95);
                 }, loadDelay);
                 break;
         }
