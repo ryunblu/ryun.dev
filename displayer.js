@@ -6,13 +6,18 @@ const leftNav = document.getElementById("left-nav");
 const main = document.getElementById("main");
 const footer = document.getElementById("footer");
 const aboutButton = document.getElementById("about-button");
-const backButton = document.getElementById("back-button");
+const project1Button = document.getElementById("project-1-button");
+const pageMyself = document.getElementById("page-myself");
+const pageSnpda = document.getElementById("page-snpda");
 
-aboutButton.onclick = () => {toggleMain()}
-backButton.onclick = () => {toggleMain()}
+aboutButton.onclick = () => {toggleMain(false, 0)}
+project1Button.onclick = () => {toggleMain(false, 1)}
+
+let pageActive = -1;
 
 // Reusable animations
 function animIn(elem, animTime, startingScale) {
+    elem.getAnimations().forEach(anim => {anim.cancel()});
     return elem.animate(
         [
             {opacity: 0, transform: `scale(${startingScale})`, easing: "steps(3, end)"},
@@ -25,6 +30,7 @@ function animIn(elem, animTime, startingScale) {
     );
 }
 function animOut(elem, animTime, endingScale) {
+    elem.getAnimations().forEach(anim => {anim.cancel()});
     return elem.animate(
         [
             {opacity: 1, transform: "scale(1)", easing: "steps(3, end)"},
@@ -35,6 +41,17 @@ function animOut(elem, animTime, endingScale) {
             fill: "forwards",
         }
     );
+}
+// Animate each child list item w/delay between
+function animInChildren(parent, animTime) {
+    let wait = 100;
+    for (const child of parent.children) {
+        child.getAnimations().forEach(anim => {anim.cancel()})
+        child.style.opacity = "0";
+        child.style.transform = "scale(0.9)";
+        setTimeout(() => {animIn(child, animTime, 0.9);}, wait)
+        wait += 80;
+    }
 }
 
 // Opening animation
@@ -60,15 +77,15 @@ window.addEventListener('load', () => {
         }
     )
 
+    dealWithMobile();
+    showLeftNav();
+    toggleMain(true, 0);
+    setTimeout(() => {footer.style.display = "block";}, 100);
     anim.finished.then(
         () => {
-            dealWithMobile();
-            showLeftNav();
-            toggleMain(true);
-            setTimeout(() => {footer.style.display = "block";}, 100);
-            animOut(startAnim, 200, 0.9)
             // Start listening to window resizing when done with opening anim
             window.addEventListener("resize", () => {dealWithMobile()})
+            animOut(startAnim, 200, 0.9)
         }
     );
 })
@@ -79,15 +96,7 @@ function showLeftNav() {
         let animTime = 600;
         leftNav.style.display = "flex";
         animIn(leftNav, animTime, 0.9);
-        // Animate each child list item
-        let waitTime = 40;
-        for (const child of leftNav.children) {
-            child.getAnimations().forEach(anim => {anim.cancel()})
-            child.style.opacity = "0";
-            child.style.transform = "scale(0.9)";
-            setTimeout(() => {animIn(child, animTime, 0.9);}, waitTime)
-            waitTime += 60;
-        }
+        animInChildren(leftNav, animTime)
     }
 }
 
@@ -100,21 +109,62 @@ function dealWithMobile() {
 }
 
 // Display main window or not
-function toggleMain(first = false) {
+function toggleMain(first = false, page = 0) {
     let animTime;
     if (first) {animTime = 600}
     else {animTime = 250}
-    
-    if (main.style.display === "none" || main.style.display === "") {
-        main.style.display = "block";
-        animIn(main, animTime, 0.9);
-        dealWithMobile();
+
+    if (pageActive !== page) {
+        switch (pageActive) {
+            case -1: // Display page
+                main.style.display = "block";
+                animIn(main, animTime, 0.9);
+                dealWithMobile();
+                break;
+            case 0:
+                aboutButton.innerHTML = "&nbsp;&nbsp;Myself";
+                aboutButton.classList.remove("list-item-selected")
+                const anim1 = animOut(pageMyself, 200, 0.98)
+                anim1.finished.then(() => {
+                    pageMyself.style.display = "none";
+                })
+                break;
+            case 1:
+                project1Button.innerHTML = "&nbsp;&nbsp;SN-PDA";
+                project1Button.classList.remove("list-item-selected")
+                const anim2 = animOut(pageSnpda, 200, 0.98)
+                anim2.finished.then(() => {
+                    pageSnpda.style.display = "none";
+                })
+                break;
+        }
+        switch (page) {
+            case -1: // Hide page
+                const anim = animOut(main, animTime, 0.9);
+                anim.finished.then(() => {
+                    main.style.display = "none";
+                    dealWithMobile();
+                });
+                break;
+            case 0:
+                aboutButton.innerHTML = "&nbsp;&nbsp;-> Myself";
+                aboutButton.classList.add("list-item-selected")
+                setTimeout(() => {
+                    pageMyself.style.display = "flex";
+                    animIn(pageMyself, 200, 0.95);
+                    animInChildren(pageMyself, 600);
+                }, 200);
+                break;
+            case 1:
+                project1Button.innerHTML = "&nbsp;&nbsp;-> SN-PDA";
+                project1Button.classList.add("list-item-selected");
+                setTimeout(() => {
+                    pageSnpda.style.display = "flex";
+                    animIn(pageSnpda, 200, 0.95);
+                    animInChildren(pageSnpda, 600);
+                }, 200);
+                break;
+        }
     }
-    else {
-        const anim = animOut(main, animTime, 0.9);
-        anim.finished.then(() => {
-            main.style.display = "none";
-            dealWithMobile();
-        });
-    }
+    pageActive = page;
 }

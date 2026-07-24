@@ -86,6 +86,13 @@ p {
   }
 }
 
+.list-item-selected {
+  user-select: none;
+  pointer-events: none;
+  cursor: default;
+  background-color: #003B06;
+}
+
 #main {
   display: none;
   flex-direction: column;
@@ -97,6 +104,18 @@ p {
   overflow-y: auto;
   opacity: 0;
   transform: scale(0.9);
+}
+
+#page-myself {
+  display: none;
+}
+
+#page-snpda {
+  display: none;
+}
+
+.main-page {
+  flex-direction: column;
 }
 
 #footer {
