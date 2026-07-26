@@ -116,7 +116,7 @@ function dealWithMobile() {
 // Display main window or not
 function toggleMain(first = false, page = 0) {
     let loadDelay;
-    if (first) {loadDelay = 400}
+    if (first) {loadDelay = 100}
     else {loadDelay = 1000}
 
     if (pageActive !== page) {
@@ -154,7 +154,7 @@ function toggleMain(first = false, page = 0) {
                 });
                 break;
             case 0:
-                aboutButton.innerHTML = "&nbsp;&nbsp;-> Myself";
+                aboutButton.innerHTML = "&nbsp;&nbsp;> Myself <";
                 aboutButton.classList.add("list-item-selected")
                 setTimeout(() => {
                     pageMyself.style.display = "flex";
@@ -163,7 +163,7 @@ function toggleMain(first = false, page = 0) {
                 }, loadDelay);
                 break;
             case 1:
-                project1Button.innerHTML = "&nbsp;&nbsp;-> SN-PDA";
+                project1Button.innerHTML = "&nbsp;&nbsp;> SN-PDA <";
                 project1Button.classList.add("list-item-selected");
                 setTimeout(() => {
                     pageSnpda.style.display = "flex";

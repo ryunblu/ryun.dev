@@ -5,37 +5,37 @@
     <link rel="stylesheet" href="index.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Parking page for all my random projects or online identities.">
-    <link rel="icon" type="image/x-icon" href="/favicon.png">
+    <link rel="icon" type="image/x-icon" href="/img/favicon.png">
     <title>ryun.dev</title>
 </head>
 <body id="body">
     <header id="header">
         <div style="display: flex; flex-direction: column;">
-            <p id="header-text-1">site last modified July 24, 2026</p>
+            <p id="header-text-1">site last modified July 25, 2026</p>
             <div style="display: flex; flex-direction: row" id="header-text-2">
                 <p>view the latest changes&nbsp;</p>
                 <a href="https://github.com/ryunblu/ryun.dev/commit/master" target="_blank" rel="noopener noreferrer">here</a>
             </div>
         </div>
     </header>
-
+    
     <section id="cat-area">
         <div id="start-anim">
             <!--Images exported with width 494px and pixelate 18.4-->
-            <img src="HDD_icon_2.png" class="HDD-icon" id="hdd-icon-2" alt="HDD icon head position 2"/>
-            <img src="HDD_icon_1.png" class="HDD-icon" alt="HDD icon head position 1"/>
+            <img src="img/HDD_icon_2.png" class="HDD-icon" id="hdd-icon-2" alt="HDD icon head position 2"/>
+            <img src="img/HDD_icon_1.png" class="HDD-icon" alt="HDD icon head position 1"/>
         </div>
     </section>
 
     <div id="middle">
         <nav id="left-nav">
-            <p style="font-weight: bold; line-height: 120%">Find out all about what <br>im up to here &darr;</p>
+            <p style="font-weight: bold; line-height: 120%">Find out all about what <br>im up to below</p>
             <p class="category-title">&nbsp;Info</p>
             <a class="list-item" id="about-button" role="button">&nbsp;&nbsp;-> Myself</a>
             <p class="category-title">&nbsp;Projects</p>
             <a class="list-item" id="project-1-button" role="button">&nbsp;&nbsp;SN-PDA</a>
             <div style="display: flex; flex-direction: row;">
-                <p style="flex-basis: 66%" class="category-title">&nbsp;Socials</p>
+                <p style="flex-grow: 1" class="category-title">&nbsp;Socials</p>
                 <p style="font-weight: normal; margin-left: auto;" class="category-title">@ryunblu&nbsp;</p>
             </div>
             <a class="list-item" href="https://github.com/ryunblu" target="_blank" rel="noopener noreferrer">&nbsp;&nbsp;GitHub</a>
@@ -49,13 +49,28 @@
 
         <main id="main">
             <article class="main-page" id="page-myself">
-                <p style="font-weight: bolder; line-height: 120%">Hey hey, welcome to my corner of the internet ᓚᘏᗢ</p>
-                <p>Names Ryan, 23 yr old student and software engineer.</p>
-                <p>My current project is finishing this about me description!</p>
+                <div style="display: flex; flex-direction: row;">
+                    <p class="category-title">&nbsp;&nbsp;&nbsp;&nbsp;>&nbsp;</p>
+                    <p>&nbsp;Myself&nbsp;</p>
+                    <p class="category-title" style="flex-grow: 1">&nbsp;<</p>
+                </div>
+                <p style="margin-bottom: 13px">hey hey, welcome to my corner of the internet ᓚᘏᗢ</p>
+                <p>names Ryan - student / software engineer / owned by cat / etc</p>
+                <div style="display: flex; flex-direction: row; margin-bottom: 16px; overflow: auto;">
+                    <img class="photo" src="img/image_me_1.png" height="128" width="auto"/>
+                    <img class="photo" src="img/image_me_2.png" height="128" width="auto"/>
+                    <img class="photo" src="img/image_me_3.png" height="128" width="auto"/>
+                    <img class="photo" src="img/image_me_4.png" height="128" width="auto"/>
+                </div>
+                <p style="margin-bottom: 13px">← feel free to check out my projects with the nav window on the left, more recent projects are higher</p>
             </article>
             
             <article class="main-page" id="page-snpda">
-                <p>This page is a WIP, link to project repo:</p>
+                <div style="display: flex; flex-direction: row;">
+                    <p class="category-title">&nbsp;&nbsp;&nbsp;&nbsp;>&nbsp;</p>
+                    <p>&nbsp;SN-PDA Radio Teensy Project&nbsp;</p>
+                    <p class="category-title" style="flex-grow: 1">&nbsp;<</p>
+                </div>
                 <a class="list-item" href="https://github.com/ryunblu/SN-PDA" target="_blank" rel="noopener noreferrer">SN-PDA GitHub</a>
             </article>
         </main>
@@ -70,7 +85,7 @@
             </div>
         </div>
     </footer>
-
+    
     <script type="module" src="displayer.js"></script>
 </body>
 </html>

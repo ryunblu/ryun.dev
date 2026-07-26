@@ -15,7 +15,7 @@ p {
 #body {
   background-color: #212421;
   color: #eee;
-  max-width: 1200px;
+  max-width: 900px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -112,15 +112,21 @@ p {
   margin: 0 11px 0 0;
   border: 1px solid lightgreen;
   width: 100%;
-  height: calc(100vh - 280px);
+  height: calc(100vh - 288px);
   padding: 6px;
   overflow-y: auto;
   opacity: 0;
   transform: scale(0.95);
+  padding: 10px;
 }
 
 #page-myself {
   display: none;
+}
+
+.photo {
+  margin-right: 8px;
+  border: 1px solid green;
 }
 
 #page-snpda {
