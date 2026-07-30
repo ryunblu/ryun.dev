@@ -86,7 +86,7 @@ function animHDD() {
 // Start
 window.addEventListener('load', () => {
     header.style.display = "flex";
-    animIn(header, 250, 0.9);
+    animIn(header, 400, 0.9);
     dealWithMobile();
     showLeftNav();
     toggleMain(true, 0);

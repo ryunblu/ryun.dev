@@ -112,12 +112,13 @@ p {
   margin: 0 11px 0 0;
   border: 1px solid lightgreen;
   width: 100%;
-  height: calc(100vh - 288px);
-  padding: 6px;
+  height: calc(100vh - 278px);
   overflow-y: auto;
   opacity: 0;
   transform: scale(0.95);
-  padding: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
 }
 
 #page-myself {
