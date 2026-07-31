@@ -1,15 +1,19 @@
 ﻿a {
   color: lightgreen;
+  font-family: "Barlow Condensed", sans-serif;
   font-style: normal;
+  font-size: 17px;
   margin-top: 0;
   margin-bottom: 6px;
   text-decoration: none;
 }
 
 p {
+  font-family: "Barlow Condensed", sans-serif;
   font-style: normal;
+  font-size: 17px;
   margin-top: 0;
-  margin-bottom: 6px;
+  margin-bottom: 5px;
 }
 
 #body {
@@ -41,7 +45,6 @@ p {
   display: flex;
   justify-content: right;
   margin: 0 5px 0 0;
-  font-size: 12px;
 }
 
 #start-anim {
@@ -56,7 +59,7 @@ p {
   grid-column: 1;
   grid-row: 1;
   height: 80px;
-  width: auto;
+  width: 56px;
 }
 
 #cat-area {
@@ -85,7 +88,7 @@ p {
 }
 
 .category-title {
-  font-weight: bolder;
+  font-weight: 600;
   background-color: #004b0b;
 }
 
@@ -128,6 +131,8 @@ p {
 .photo {
   margin-right: 8px;
   border: 1px solid green;
+  height: 128px;
+  width: 128px;
 }
 
 #page-snpda {
