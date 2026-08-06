@@ -1,17 +1,31 @@
-﻿a {
-  color: lightgreen;
-  font-family: "Barlow Condensed", sans-serif;
+﻿@font-face {
+  font-family: 'primary';
+  src: url('fonts/SvBasicManual-nRPP.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'kiwi';
+  src: url('fonts/KiwiSoda.ttf') format('truetype');
+}
+
+a {
+  font-family: "primary", sans-serif;
+  font-weight: 400;
   font-style: normal;
-  font-size: 17px;
+
+  color: lightgreen;
+  font-size: 15px;
   margin-top: 0;
   margin-bottom: 6px;
   text-decoration: none;
 }
 
 p {
-  font-family: "Barlow Condensed", sans-serif;
+  font-family: "primary", sans-serif;
+  font-weight: 400;
   font-style: normal;
-  font-size: 17px;
+  
+  font-size: 15px;
   margin-top: 0;
   margin-bottom: 5px;
 }
@@ -38,13 +52,19 @@ p {
   display: flex;
   justify-content: right;
   margin: 5px 5px 0 0;
-  font-size: 12px;
+  font-size: 11px;
 }
 
 #header-text-2 {
   display: flex;
   justify-content: right;
   margin: 0 5px 0 0;
+}
+
+#cat-area {
+  display: flex;
+  justify-content: center;
+  height: 142px;
 }
 
 #start-anim {
@@ -62,10 +82,13 @@ p {
   width: 56px;
 }
 
-#cat-area {
-  display: flex;
-  justify-content: center;
-  height: 142px;
+#cat {
+  position: fixed;
+  top: 95px;
+  pointer-events: none;
+  width: 90px;
+  height: 90px;
+  left: 70vw;
 }
 
 #middle {
@@ -126,6 +149,11 @@ p {
 
 #page-myself {
   display: none;
+}
+
+#corner-of-internet {
+  font-family: 'kiwi', sans-serif;
+  font-size: 17px;
 }
 
 .photo {
