@@ -167,6 +167,10 @@ p {
   display: none;
 }
 
+#page-prairie {
+  display: none;
+}
+
 .main-page {
   flex-direction: column;
 }

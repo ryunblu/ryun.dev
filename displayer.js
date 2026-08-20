@@ -7,11 +7,14 @@ const main = document.getElementById("main");
 const footer = document.getElementById("footer");
 const aboutButton = document.getElementById("about-button");
 const project1Button = document.getElementById("project-1-button");
+const project2Button = document.getElementById("project-2-button");
 const pageMyself = document.getElementById("page-myself");
 const pageSnpda = document.getElementById("page-snpda");
+const pagePrairie = document.getElementById("page-prairie");
 
-aboutButton.onclick = () => {toggleMain(false, 0)}
-project1Button.onclick = () => {toggleMain(false, 1)}
+aboutButton.onclick = () => {setPage(false, 0)}
+project1Button.onclick = () => {setPage(false, 1)}
+project2Button.onclick = () => {setPage(false, 2)}
 
 let pageActive = -1;
 
@@ -89,7 +92,7 @@ window.addEventListener('load', () => {
     animIn(header, 400, 0.9);
     dealWithMobile();
     showLeftNav();
-    toggleMain(true, 0);
+    setPage(true, 0);
     setTimeout(() => {footer.style.display = "block";}, 100);
     // Start listening to window resizing when done with opening anim
     window.addEventListener("resize", () => {dealWithMobile()})
@@ -113,8 +116,7 @@ function dealWithMobile() {
     // TODO: REMAKE
 }
 
-// Display main window or not
-function toggleMain(first = false, page = 0) {
+function setPage(first = false, page = 0) {
     let loadDelay;
     if (first) {loadDelay = 100}
     else {loadDelay = 1000}
@@ -144,6 +146,15 @@ function toggleMain(first = false, page = 0) {
                     pageSnpda.style.display = "none";
                 })
                 break;
+            case 2:
+                project2Button.innerHTML = "&nbsp;&nbsp;Prairie";
+                project2Button.classList.remove("list-item-selected")
+                const anim3 = animOut(pagePrairie, 200, 0.98)
+                animHDD();
+                anim3.finished.then(() => {
+                    pagePrairie.style.display = "none";
+                })
+                break;
         }
         switch (page) {
             case -1: // Hide page
@@ -169,6 +180,15 @@ function toggleMain(first = false, page = 0) {
                     pageSnpda.style.display = "flex";
                     animIn(pageSnpda, 200, 0.98);
                     animInChildren(pageSnpda, 500, 0.95);
+                }, loadDelay);
+                break;
+            case 2:
+                project2Button.innerHTML = "&nbsp;&nbsp;> Prairie <";
+                project2Button.classList.add("list-item-selected");
+                setTimeout(() => {
+                    pagePrairie.style.display = "flex";
+                    animIn(pagePrairie, 200, 0.98);
+                    animInChildren(pagePrairie, 500, 0.95);
                 }, loadDelay);
                 break;
         }
