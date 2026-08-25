@@ -130,6 +130,12 @@ p {
   background-color: #003B06;
 }
 
+.list-item-deactivated {
+  user-select: none;
+  pointer-events: none;
+  cursor: default;
+}
+
 #main {
   display: none;
   flex-direction: column;

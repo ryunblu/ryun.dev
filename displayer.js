@@ -146,78 +146,92 @@ function setPage(first = false, page = 0) {
     let loadDelay;
     if (first) {loadDelay = 100}
     else {loadDelay = 1000}
+    
+    deactivateListItems(1500);
 
-    if (pageActive !== page) {
-        switch (pageActive) {
-            case -1: // Display page
-                main.style.display = "block";
-                animIn(main, 600, 0.95);
-                dealWithMobile();
-                break;
-            case 0:
-                aboutButton.innerHTML = "&nbsp;&nbsp;Myself";
-                aboutButton.classList.remove("list-item-selected")
-                const anim1 = animOut(pageMyself, 200, 0.98)
-                animHDD();
-                anim1.finished.then(() => {
-                    pageMyself.style.display = "none";
-                })
-                break;
-            case 1:
-                project1Button.innerHTML = "&nbsp;&nbsp;SN-PDA";
-                project1Button.classList.remove("list-item-selected")
-                const anim2 = animOut(pageSnpda, 200, 0.98)
-                animHDD();
-                anim2.finished.then(() => {
-                    pageSnpda.style.display = "none";
-                })
-                break;
-            case 2:
-                project2Button.innerHTML = "&nbsp;&nbsp;Prairie";
-                project2Button.classList.remove("list-item-selected")
-                const anim3 = animOut(pagePrairie, 200, 0.98)
-                animHDD();
-                anim3.finished.then(() => {
-                    pagePrairie.style.display = "none";
-                })
-                break;
-        }
-        switch (page) {
-            case -1: // Hide page
-                const anim = animOut(main, 600, 0.95);
-                anim.finished.then(() => {
-                    main.style.display = "none";
-                    dealWithMobile();
-                });
-                break;
-            case 0:
-                aboutButton.innerHTML = "&nbsp;&nbsp;> Myself <";
-                aboutButton.classList.add("list-item-selected")
-                setTimeout(() => {
-                    pageMyself.style.display = "flex";
-                    animIn(pageMyself, 200, 0.98);
-                    animInChildren(pageMyself, 500, 0.95);
-                }, loadDelay);
-                break;
-            case 1:
-                project1Button.innerHTML = "&nbsp;&nbsp;> SN-PDA <";
-                project1Button.classList.add("list-item-selected");
-                setTimeout(() => {
-                    pageSnpda.style.display = "flex";
-                    animIn(pageSnpda, 200, 0.98);
-                    animInChildren(pageSnpda, 500, 0.95);
-                }, loadDelay);
-                break;
-            case 2:
-                project2Button.innerHTML = "&nbsp;&nbsp;> Prairie <";
-                project2Button.classList.add("list-item-selected");
-                setTimeout(() => {
-                    pagePrairie.style.display = "flex";
-                    animIn(pagePrairie, 200, 0.98);
-                    animInChildren(pagePrairie, 500, 0.95);
-                }, loadDelay);
-                break;
-        }
-    }
+    const oldPage = pageActive;
     pageActive = page;
+
+    switch (oldPage) {
+        case -1: // Display page
+            main.style.display = "block";
+            animIn(main, 600, 0.95);
+            dealWithMobile();
+            break;
+        case 0:
+            aboutButton.innerHTML = "&nbsp;&nbsp;Myself";
+            aboutButton.classList.remove("list-item-selected")
+            const anim1 = animOut(pageMyself, 200, 0.98)
+            animHDD();
+            anim1.finished.then(() => {
+                pageMyself.style.display = "none";
+            })
+            break;
+        case 1:
+            project1Button.innerHTML = "&nbsp;&nbsp;SN-PDA";
+            project1Button.classList.remove("list-item-selected")
+            const anim2 = animOut(pageSnpda, 200, 0.98)
+            animHDD();
+            anim2.finished.then(() => {
+                pageSnpda.style.display = "none";
+            })
+            break;
+        case 2:
+            project2Button.innerHTML = "&nbsp;&nbsp;Prairie";
+            project2Button.classList.remove("list-item-selected")
+            const anim3 = animOut(pagePrairie, 200, 0.98)
+            animHDD();
+            anim3.finished.then(() => {
+                pagePrairie.style.display = "none";
+            })
+            break;
+    }
+    switch (page) {
+        case -1: // Hide page
+            const anim = animOut(main, 600, 0.95);
+            anim.finished.then(() => {
+                main.style.display = "none";
+                dealWithMobile();
+            });
+            break;
+        case 0:
+            aboutButton.innerHTML = "&nbsp;&nbsp;> Myself <";
+            aboutButton.classList.add("list-item-selected")
+            setTimeout(() => {
+                pageMyself.style.display = "flex";
+                animIn(pageMyself, 200, 0.98);
+                animInChildren(pageMyself, 500, 0.95);
+            }, loadDelay);
+            break;
+        case 1:
+            project1Button.innerHTML = "&nbsp;&nbsp;> SN-PDA <";
+            project1Button.classList.add("list-item-selected");
+            setTimeout(() => {
+                pageSnpda.style.display = "flex";
+                animIn(pageSnpda, 200, 0.98);
+                animInChildren(pageSnpda, 500, 0.95);
+            }, loadDelay);
+            break;
+        case 2:
+            project2Button.innerHTML = "&nbsp;&nbsp;> Prairie <";
+            project2Button.classList.add("list-item-selected");
+            setTimeout(() => {
+                pagePrairie.style.display = "flex";
+                animIn(pagePrairie, 200, 0.98);
+                animInChildren(pagePrairie, 500, 0.95);
+            }, loadDelay);
+            break;
+    }
+}
+
+function deactivateListItems(delay){
+    aboutButton.classList.add("list-item-deactivated");
+    project1Button.classList.add("list-item-deactivated");
+    project2Button.classList.add("list-item-deactivated");
+    
+    setTimeout(() => {
+        aboutButton.classList.remove("list-item-deactivated");
+        project1Button.classList.remove("list-item-deactivated");
+        project2Button.classList.remove("list-item-deactivated");
+    }, delay);
 }
