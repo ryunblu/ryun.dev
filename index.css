@@ -82,13 +82,11 @@ p {
   width: 56px;
 }
 
-#cat {
+#canvas-cat {
   position: fixed;
-  top: 95px;
   pointer-events: none;
-  width: 90px;
-  height: 90px;
-  left: 70vw;
+  margin-top: 46px;
+  left: calc(50% + min(300px, 25%));
 }
 
 #middle {

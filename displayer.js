@@ -11,10 +11,21 @@ const project2Button = document.getElementById("project-2-button");
 const pageMyself = document.getElementById("page-myself");
 const pageSnpda = document.getElementById("page-snpda");
 const pagePrairie = document.getElementById("page-prairie");
+const canvasCat = document.getElementById("canvas-cat");
 
 aboutButton.onclick = () => {setPage(false, 0)}
 project1Button.onclick = () => {setPage(false, 1)}
 project2Button.onclick = () => {setPage(false, 2)}
+
+const catCanvas2D = canvasCat.getContext("2d");
+const catSpriteSheet = new Image();
+catSpriteSheet.src = "img/reece/cat_spriteSheet.png";
+catSpriteSheet.onload = () => {startCat()}
+const spriteLength = 96;
+let currFrame = 0;
+let frameDelay = 130;
+const idleFrames = 13;
+let lastFrameTime = 0;
 
 let pageActive = -1;
 
@@ -90,6 +101,7 @@ function animHDD() {
 window.addEventListener('load', () => {
     header.style.display = "flex";
     animIn(header, 400, 0.9);
+    animIn(canvasCat, 400, 0.9, 250);
     dealWithMobile();
     showLeftNav();
     setPage(true, 0);
@@ -97,6 +109,20 @@ window.addEventListener('load', () => {
     // Start listening to window resizing when done with opening anim
     window.addEventListener("resize", () => {dealWithMobile()})
 })
+
+// Start cat
+function startCat() {
+    catCanvas2D.clearRect(0, 0, spriteLength, spriteLength);
+    let frameX = currFrame * spriteLength;
+    catCanvas2D.drawImage(catSpriteSheet, frameX, 0, spriteLength, spriteLength, 0, 0, spriteLength, spriteLength);
+    let currTime = performance.now();
+    if (currTime - lastFrameTime > frameDelay) {
+        currFrame = (currFrame + 1) % idleFrames;
+        lastFrameTime = currTime;
+    }
+
+    requestAnimationFrame(startCat);
+}
 
 // Show left-nav w/anim
 function showLeftNav() {
