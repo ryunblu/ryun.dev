@@ -11,7 +11,7 @@
 <body id="body">
     <header id="header">
         <div style="display: flex; flex-direction: column;">
-            <p id="header-text-1">site last modified August 24, 2026</p>
+            <p id="header-text-1">site last modified August 26, 2026</p>
             <div style="display: flex; flex-direction: row" id="header-text-2">
                 <p style="font-size: 11px">view the latest changes&nbsp;</p>
                 <a style="font-size: 11px" href="https://github.com/ryunblu/ryun.dev/commit/master" target="_blank" rel="noopener noreferrer">here</a>
@@ -20,12 +20,6 @@
     </header>
     
     <section id="cat-area">
-        <div id="start-anim">
-            <!--Images exported with width 494px and pixelate 18.4-->
-            <img src="img/HDD_icon_2.png" class="HDD-icon" id="hdd-icon-2" alt="HDD icon head position 2"/>
-            <img src="img/HDD_icon_1.png" class="HDD-icon" alt="HDD icon head position 1"/>
-        </div>
-
         <canvas id="canvas-cat" width="96" height="96"></canvas>
     </section>
 
@@ -52,6 +46,12 @@
         </nav>
 
         <main id="main">
+            <div id="HDD-anim">
+                <!--Images exported with width 494px and pixelate 18.4-->
+                <img src="img/HDD_icon_2.png" class="HDD-icon" id="hdd-icon-2" alt="HDD icon head position 2"/>
+                <img src="img/HDD_icon_1.png" class="HDD-icon" alt="HDD icon head position 1"/>
+            </div>
+            
             <article class="main-page" id="page-myself">
                 <div style="display: flex; flex-direction: row;">
                     <p class="category-title">&nbsp;&nbsp;&nbsp;&nbsp;>&nbsp;</p>
@@ -66,7 +66,7 @@
                     <img class="photo" src="img/image_me_2.png" height="1200" width="1200" alt="ryan photo 2"/>
                     <img class="photo" src="img/image_me_3.png" height="1200" width="1200" alt="ryan photo 3"/>
                     <img class="photo" src="img/image_me_4.png" height="1200" width="1200" alt="ryan photo 4"/>
-                    <div style="flex-grow: 1; background-color: darkgreen"></div>
+                    <div style="flex-grow: 1; background-color: #004900"></div>
                 </div>
                 <p>im always working on something new! right now im working on a teensy powered handheld personal radio communication device called the SN-PDA</p>
                 <p style="margin-bottom: 13px">feel free to check them out with the nav window on the left, more recent projects are higher</p>

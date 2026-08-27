@@ -33,7 +33,7 @@ p {
 #body {
   background-color: #212421;
   color: #eee;
-  max-width: 900px;
+  max-width: 880px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -63,16 +63,21 @@ p {
 
 #cat-area {
   display: flex;
-  justify-content: center;
+  flex-direction: column-reverse;
   height: 142px;
+  position: relative;
 }
 
-#start-anim {
-  margin-top: 30px;
+#HDD-anim {
+  position: absolute;
   color: lightgreen;
   display: grid;
+  margin-left: calc(50% - 26px);
+  margin-top: 20px;
+  inset: 0;
+  width: 56px;
+  height: 80px;
   opacity: 0;
-  transform: scale(0.9);
 }
 
 .HDD-icon {
@@ -83,15 +88,15 @@ p {
 }
 
 #canvas-cat {
-  position: fixed;
+  position: absolute;
   pointer-events: none;
-  margin-top: 46px;
-  left: calc(50% + min(300px, 20%));
+  left: calc(100% - 140px);
 }
 
 #middle {
   display: flex;
-  flex-direction: row
+  flex-direction: row;
+  position: relative;
 }
 
 #left-nav {
@@ -137,6 +142,7 @@ p {
 }
 
 #main {
+  position: relative;
   display: none;
   flex-direction: column;
   margin: 0 11px 0 0;

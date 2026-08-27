@@ -1,5 +1,5 @@
 // Elements
-const startAnim = document.getElementById("start-anim");
+const startAnim = document.getElementById("HDD-anim");
 const HDDIcon2 = document.getElementById("hdd-icon-2");
 const header = document.getElementById("header");
 const leftNav = document.getElementById("left-nav");
@@ -86,6 +86,7 @@ function animHDD() {
             {opacity: 1}
         ],
         {
+            delay: 150,
             duration: 1500,
             fill: "forwards",
         }
@@ -145,7 +146,7 @@ function dealWithMobile() {
 function setPage(first = false, page = 0) {
     let loadDelay;
     if (first) {loadDelay = 100}
-    else {loadDelay = 1000}
+    else {loadDelay = 1500}
     
     deactivateListItems(1500);
 
