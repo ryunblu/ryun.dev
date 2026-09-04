@@ -148,7 +148,7 @@ function setPage(first = false, page = 0) {
     if (first) {loadDelay = 100}
     else {loadDelay = 1500}
     
-    deactivateListItems(1500);
+    deactivateListItems(1600);
 
     const oldPage = pageActive;
     pageActive = page;
@@ -160,7 +160,7 @@ function setPage(first = false, page = 0) {
             dealWithMobile();
             break;
         case 0:
-            aboutButton.innerHTML = "&nbsp;&nbsp;Myself";
+            aboutButton.innerHTML = "Myself";
             aboutButton.classList.remove("list-item-selected")
             const anim1 = animOut(pageMyself, 200, 0.98)
             animHDD();
@@ -169,7 +169,7 @@ function setPage(first = false, page = 0) {
             })
             break;
         case 1:
-            project1Button.innerHTML = "&nbsp;&nbsp;SN-PDA";
+            project1Button.innerHTML = "SN-PDA";
             project1Button.classList.remove("list-item-selected")
             const anim2 = animOut(pageSnpda, 200, 0.98)
             animHDD();
@@ -178,7 +178,7 @@ function setPage(first = false, page = 0) {
             })
             break;
         case 2:
-            project2Button.innerHTML = "&nbsp;&nbsp;Prairie";
+            project2Button.innerHTML = "Prairie";
             project2Button.classList.remove("list-item-selected")
             const anim3 = animOut(pagePrairie, 200, 0.98)
             animHDD();
@@ -196,7 +196,7 @@ function setPage(first = false, page = 0) {
             });
             break;
         case 0:
-            aboutButton.innerHTML = "&nbsp;&nbsp;> Myself <";
+            aboutButton.innerHTML = "> Myself <";
             aboutButton.classList.add("list-item-selected")
             setTimeout(() => {
                 pageMyself.style.display = "flex";
@@ -205,7 +205,7 @@ function setPage(first = false, page = 0) {
             }, loadDelay);
             break;
         case 1:
-            project1Button.innerHTML = "&nbsp;&nbsp;> SN-PDA <";
+            project1Button.innerHTML = "> SN-PDA <";
             project1Button.classList.add("list-item-selected");
             setTimeout(() => {
                 pageSnpda.style.display = "flex";
@@ -214,7 +214,7 @@ function setPage(first = false, page = 0) {
             }, loadDelay);
             break;
         case 2:
-            project2Button.innerHTML = "&nbsp;&nbsp;> Prairie <";
+            project2Button.innerHTML = "> Prairie <";
             project2Button.classList.add("list-item-selected");
             setTimeout(() => {
                 pagePrairie.style.display = "flex";
