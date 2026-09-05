@@ -176,6 +176,16 @@ p {
   padding-top: 10px;
 }
 
+.page-title-left-bar {
+  background-color: #004b0b;
+  padding: 15px 0 0 38px;
+}
+
+.page-title-right-bar {
+  background-color: #004b0b;
+  flex-grow: 1;
+}
+
 #page-myself {
   display: none;
 }
