@@ -38,14 +38,23 @@ p {
   margin-right: auto;
 }
 
+#logo-anim {
+  display: none;
+  position: absolute;
+  justify-content: center;
+  transform: translate(1px, -22px);
+}
+
 #header {
   display: none;
   flex-direction: row;
   justify-content: right;
-  margin: 5px 11px 0 11px;
+  margin: 5px 11px 0 205px;
   border: 1px solid lightgreen;
   opacity: 0;
   transform: scale(0.9);
+  white-space: nowrap;
+  overflow-x: auto;
 }
 
 #header-text-1 {
@@ -64,7 +73,7 @@ p {
 #cat-area {
   display: flex;
   flex-direction: column-reverse;
-  height: 142px;
+  height: 130px;
   position: relative;
 }
 
@@ -88,6 +97,7 @@ p {
 }
 
 #canvas-cat {
+  display: none;
   position: absolute;
   pointer-events: none;
   left: calc(100% - 140px);
@@ -106,7 +116,7 @@ p {
   border: 1px solid lightgreen;
   width: 235px;
   min-width: max-content;
-  height: calc(100vh - 280px);
+  height: calc(100vh - 198px);
   padding: 6px;
   overflow-y: auto;
   opacity: 0;
@@ -157,7 +167,7 @@ p {
   margin: 0 11px 0 0;
   border: 1px solid lightgreen;
   width: 100%;
-  height: calc(100vh - 278px);
+  height: calc(100vh - 196px);
   overflow-y: auto;
   opacity: 0;
   transform: scale(0.95);
@@ -196,12 +206,6 @@ p {
 
 #footer {
   display: none;
-}
-
-#logo-anim {
-  display: flex;
-  justify-content: center;
-  transform: translate(-50px, -10px);
 }
 
 #logo-dust-1 {

@@ -4,7 +4,7 @@ const HDDIcon2 = document.getElementById("hdd-icon-2");
 const header = document.getElementById("header");
 const leftNav = document.getElementById("left-nav");
 const main = document.getElementById("main");
-const footer = document.getElementById("footer");
+const logoAnim = document.getElementById("logo-anim");
 const aboutButton = document.getElementById("about-button");
 const project1Button = document.getElementById("project-1-button");
 const project2Button = document.getElementById("project-2-button");
@@ -100,16 +100,21 @@ function animHDD() {
 
 // Start
 window.addEventListener('load', () => {
+    logoAnim.style.display = "flex";
+    setTimeout(() => {start()}, 300);
+})
+
+function start() {
     header.style.display = "flex";
     animIn(header, 400, 0.9);
+    canvasCat.style.display = "flex";
     animIn(canvasCat, 400, 0.9, 250);
     dealWithMobile();
     showLeftNav();
     setPage(true, 0);
-    setTimeout(() => {footer.style.display = "block";}, 100);
     // Start listening to window resizing when done with opening anim
     window.addEventListener("resize", () => {dealWithMobile()})
-})
+}
 
 // Start cat
 function startCat() {
