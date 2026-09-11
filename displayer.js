@@ -110,7 +110,7 @@ window.addEventListener('load', () => {
 })
 
 // Back/Forward
-window.addEventListener("popstate", () => {openPageWithLink()});
+window.addEventListener("popstate", () => {openPageWithLink(false)});
 
 function start() {
     startTime();
@@ -127,13 +127,13 @@ function start() {
 }
 
 // Uses /<link> to open specific page, otherwise open default
-function openPageWithLink() {
+function openPageWithLink(firstTime = true) {
     const currentPath = window.location.pathname.replace(/\/+$/, "").toLowerCase();
-    if (currentPath === "/myself") {setPage(true, 0);}
-    else if (currentPath === "/sn-pda") {setPage(true, 1);}
-    else if (currentPath === "/prairie") {setPage(true, 2);}
-    else if (currentPath === "/tourneyboard") {setPage(true, 3);}
-    else {setPage(true, 0); setPath("/Myself")}
+    if (currentPath === "/myself") {setPage(firstTime, 0); setPath("/Myself")}
+    else if (currentPath === "/sn-pda") {setPage(firstTime, 1); setPath("/SN-PDA")}
+    else if (currentPath === "/prairie") {setPage(firstTime, 2); setPath("/Prairie")}
+    else if (currentPath === "/tourneyboard") {setPage(firstTime, 3); setPath("/TourneyBoard")}
+    else {setPage(firstTime, 0); setPath("/Myself")}
 }
 
 function setPath(path) {
