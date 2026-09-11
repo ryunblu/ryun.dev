@@ -129,12 +129,11 @@ function start() {
 // Uses /<link> to open specific page, otherwise open default
 function openPageWithLink() {
     const currentPath = window.location.pathname.replace(/\/+$/, "").toLowerCase();
-    console.log(currentPath);
-    if (currentPath === "/Myself") {setPage(true, 0);}
-    else if (currentPath === "/SN-PDA") {setPage(true, 1);}
-    else if (currentPath === "/Prairie") {setPage(true, 2);}
-    else if (currentPath === "/TourneyBoard") {setPage(true, 3);}
-    else {setPage(true, 0); setPath("/Myself")};
+    if (currentPath === "/myself") {setPage(true, 0);}
+    else if (currentPath === "/sn-pda") {setPage(true, 1);}
+    else if (currentPath === "/prairie") {setPage(true, 2);}
+    else if (currentPath === "/tourneyboard") {setPage(true, 3);}
+    else {setPage(true, 0); setPath("/Myself")}
 }
 
 function setPath(path) {
@@ -185,11 +184,6 @@ function startTime() {
 
     clockTxt.innerHTML =  "my time - " + Rtime + " " + Rdate.toLowerCase() + " | " + "your time - " + Ltime + " " + Ldate.toLowerCase();
     setTimeout(startTime, 1000);
-}
-
-function checkTime(i) {
-    if (i < 10) {i = "0" + i};
-    return i;
 }
 
 function setPage(first = false, page = 0) {
