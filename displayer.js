@@ -17,14 +17,14 @@ const canvasCat = document.getElementById("canvas-cat");
 const clockTxt = document.getElementById("clock-txt");
 const footer = document.getElementById("footer");
 
-aboutButton.onclick = () => {setPage(false, 0)}
-project1Button.onclick = () => {setPage(false, 1)}
-project2Button.onclick = () => {setPage(false, 2)}
-project3Button.onclick = () => {setPage(false, 3)}
+aboutButton.onclick = () => {setPage(false, 0); setPath("/Myself")}
+project1Button.onclick = () => {setPage(false, 1); setPath("/SN-PDA")}
+project2Button.onclick = () => {setPage(false, 2); setPath("/Prairie")}
+project3Button.onclick = () => {setPage(false, 3); setPath("/TourneyBoard")}
 
 const catCanvas2D = canvasCat.getContext("2d");
 const catSpriteSheet = new Image();
-catSpriteSheet.src = "img/reece/cat_spriteSheet.png";
+catSpriteSheet.src = "/img/reece/cat_spriteSheet.png";
 catSpriteSheet.onload = () => {startCat()}
 const spriteLength = 96;
 let currFrame = 0;
@@ -109,6 +109,9 @@ window.addEventListener('load', () => {
     setTimeout(() => {start()}, 300);
 })
 
+// Back/Forward
+window.addEventListener("popstate", () => {openPageWithLink()});
+
 function start() {
     startTime();
     header.style.display = "flex";
@@ -125,11 +128,16 @@ function start() {
 
 // Uses /<link> to open specific page, otherwise open default
 function openPageWithLink() {
-    const currentPath = window.location.pathname;
-    if (currentPath === "/SN-PDA") {setPage(true, 1);}
+    const currentPath = window.location.pathname.replace(/\/+$/, "").toLowerCase();
+    if (currentPath === "/Myself") {setPage(true, 0);}
+    else if (currentPath === "/SN-PDA") {setPage(true, 1);}
     else if (currentPath === "/Prairie") {setPage(true, 2);}
     else if (currentPath === "/TourneyBoard") {setPage(true, 3);}
-    else {setPage(true, 0)};
+    else {setPage(true, 0); setPath("/Myself")};
+}
+
+function setPath(path) {
+    if (window.location.pathname !== path) {history.pushState(null, "", path)}
 }
 
 // Start cat
@@ -169,11 +177,11 @@ function startTime() {
     const Rtoday = new Date();
     const Rtime = Rtoday.toLocaleTimeString([], { timeZone: targetTimeZone, hour: '2-digit', minute: '2-digit' });
     const Rdate = Rtoday.toLocaleDateString([], { weekday: 'short' });
-    
+
     const Ltoday = new Date();
     const Ltime = Ltoday.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
     const Ldate = Ltoday.toLocaleDateString([], { weekday: 'short' });
-    
+
     clockTxt.innerHTML =  "my time - " + Rtime + " " + Rdate.toLowerCase() + " | " + "your time - " + Ltime + " " + Ldate.toLowerCase();
     setTimeout(startTime, 1000);
 }
@@ -187,7 +195,7 @@ function setPage(first = false, page = 0) {
     let loadDelay;
     if (first) {loadDelay = 100}
     else {loadDelay = 150}
-    
+
     deactivateListItems(loadDelay);
 
     const oldPage = pageActive;
@@ -244,6 +252,7 @@ function setPage(first = false, page = 0) {
             aboutButton.innerHTML = "> Myself <";
             aboutButton.classList.add("list-item-selected")
             setTimeout(() => {
+                if (pageActive !== 0) {return;}
                 pageMyself.style.display = "flex";
                 animIn(pageMyself, 200, 0.98);
                 animInChildren(pageMyself, 500, 0.95);
@@ -253,6 +262,7 @@ function setPage(first = false, page = 0) {
             project1Button.innerHTML = "> SN-PDA <";
             project1Button.classList.add("list-item-selected");
             setTimeout(() => {
+                if (pageActive !== 1) {return;}
                 pageSnpda.style.display = "flex";
                 animIn(pageSnpda, 200, 0.98);
                 animInChildren(pageSnpda, 500, 0.95);
@@ -262,6 +272,7 @@ function setPage(first = false, page = 0) {
             project2Button.innerHTML = "> Prairie <";
             project2Button.classList.add("list-item-selected");
             setTimeout(() => {
+                if (pageActive !== 2) {return;}
                 pagePrairie.style.display = "flex";
                 animIn(pagePrairie, 200, 0.98);
                 animInChildren(pagePrairie, 500, 0.95);
@@ -271,6 +282,7 @@ function setPage(first = false, page = 0) {
             project3Button.innerHTML = "> TourneyBoard <";
             project3Button.classList.add("list-item-selected");
             setTimeout(() => {
+                if (pageActive !== 3) {return;}
                 pageTourney.style.display = "flex";
                 animIn(pageTourney, 200, 0.98);
                 animInChildren(pageTourney, 500, 0.95);
@@ -284,7 +296,7 @@ function deactivateListItems(delay){
     project1Button.classList.add("list-item-deactivated");
     project2Button.classList.add("list-item-deactivated");
     project3Button.classList.add("list-item-deactivated");
-    
+
     setTimeout(() => {
         aboutButton.classList.remove("list-item-deactivated");
         project1Button.classList.remove("list-item-deactivated");
