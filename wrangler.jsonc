@@ -1,5 +1,8 @@
 {
   "name": "ryun-dev",
-  "compatibility_date": "2025-11-25",
-  "assets": { "directory": "./" }
+  "compatibility_date": "2026-09-11",
+  "assets": {
+    "directory": "./",
+    "not_found_handling": "single-page-app"
+  }
 }
