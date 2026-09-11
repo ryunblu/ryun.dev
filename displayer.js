@@ -117,10 +117,19 @@ function start() {
     animIn(canvasCat, 400, 0.9, 250);
     dealWithMobile();
     showLeftNav();
-    setPage(true, 0);
+    openPageWithLink();
     animIn(footer, 400, 0.95);
     // Start listening to window resizing when done with opening anim
     window.addEventListener("resize", () => {dealWithMobile()})
+}
+
+// Uses /<link> to open specific page, otherwise open default
+function openPageWithLink() {
+    const currentPath = window.location.pathname;
+    if (currentPath === "/SN-PDA") {setPage(true, 1);}
+    else if (currentPath === "/Prairie") {setPage(true, 2);}
+    else if (currentPath === "/TourneyBoard") {setPage(true, 3);}
+    else {setPage(true, 0)};
 }
 
 // Start cat
