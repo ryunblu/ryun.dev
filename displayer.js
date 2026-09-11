@@ -14,6 +14,7 @@ const pageSnpda = document.getElementById("page-snpda");
 const pagePrairie = document.getElementById("page-prairie");
 const pageTourney = document.getElementById("page-tourney");
 const canvasCat = document.getElementById("canvas-cat");
+const clockTxt = document.getElementById("clock-txt");
 const footer = document.getElementById("footer");
 
 aboutButton.onclick = () => {setPage(false, 0)}
@@ -109,6 +110,7 @@ window.addEventListener('load', () => {
 })
 
 function start() {
+    startTime();
     header.style.display = "flex";
     animIn(header, 400, 0.9);
     canvasCat.style.display = "flex";
@@ -151,6 +153,25 @@ function isMobile() {
 }
 function dealWithMobile() {
     // TODO: REMAKE
+}
+
+function startTime() {
+    const targetTimeZone = 'America/Los_Angeles';
+    const Rtoday = new Date();
+    const Rtime = Rtoday.toLocaleTimeString([], { timeZone: targetTimeZone, hour: '2-digit', minute: '2-digit' });
+    const Rdate = Rtoday.toLocaleDateString([], { weekday: 'short' });
+    
+    const Ltoday = new Date();
+    const Ltime = Ltoday.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+    const Ldate = Ltoday.toLocaleDateString([], { weekday: 'short' });
+    
+    clockTxt.innerHTML =  "my time - " + Rtime + " " + Rdate.toLowerCase() + " | " + "your time - " + Ltime + " " + Ldate.toLowerCase();
+    setTimeout(startTime, 1000);
+}
+
+function checkTime(i) {
+    if (i < 10) {i = "0" + i};
+    return i;
 }
 
 function setPage(first = false, page = 0) {
