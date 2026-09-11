@@ -207,6 +207,10 @@ p {
   display: none;
 }
 
+#page-tourney {
+  display: none;
+}
+
 .main-page {
   flex-direction: column;
 }

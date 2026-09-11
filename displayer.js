@@ -8,15 +8,18 @@ const logoAnim = document.getElementById("logo-anim");
 const aboutButton = document.getElementById("about-button");
 const project1Button = document.getElementById("project-1-button");
 const project2Button = document.getElementById("project-2-button");
+const project3Button = document.getElementById("project-3-button");
 const pageMyself = document.getElementById("page-myself");
 const pageSnpda = document.getElementById("page-snpda");
 const pagePrairie = document.getElementById("page-prairie");
+const pageTourney = document.getElementById("page-tourney");
 const canvasCat = document.getElementById("canvas-cat");
 const footer = document.getElementById("footer");
 
 aboutButton.onclick = () => {setPage(false, 0)}
 project1Button.onclick = () => {setPage(false, 1)}
 project2Button.onclick = () => {setPage(false, 2)}
+project3Button.onclick = () => {setPage(false, 3)}
 
 const catCanvas2D = canvasCat.getContext("2d");
 const catSpriteSheet = new Image();
@@ -190,6 +193,14 @@ function setPage(first = false, page = 0) {
                 pagePrairie.style.display = "none";
             })
             break;
+        case 3:
+            project3Button.innerHTML = "TourneyBoard";
+            project3Button.classList.remove("list-item-selected")
+            const anim4 = animOut(pageTourney, loadDelay - 10, 0.98)
+            anim4.finished.then(() => {
+                pageTourney.style.display = "none";
+            })
+            break;
     }
     switch (page) {
         case -1: // Hide page
@@ -226,6 +237,15 @@ function setPage(first = false, page = 0) {
                 animInChildren(pagePrairie, 500, 0.95);
             }, loadDelay);
             break;
+        case 3:
+            project3Button.innerHTML = "> TourneyBoard <";
+            project3Button.classList.add("list-item-selected");
+            setTimeout(() => {
+                pageTourney.style.display = "flex";
+                animIn(pageTourney, 200, 0.98);
+                animInChildren(pageTourney, 500, 0.95);
+            }, loadDelay);
+            break;
     }
 }
 
@@ -233,10 +253,12 @@ function deactivateListItems(delay){
     aboutButton.classList.add("list-item-deactivated");
     project1Button.classList.add("list-item-deactivated");
     project2Button.classList.add("list-item-deactivated");
+    project3Button.classList.add("list-item-deactivated");
     
     setTimeout(() => {
         aboutButton.classList.remove("list-item-deactivated");
         project1Button.classList.remove("list-item-deactivated");
         project2Button.classList.remove("list-item-deactivated");
+        project3Button.classList.remove("list-item-deactivated");
     }, delay);
 }
