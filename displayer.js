@@ -129,6 +129,7 @@ function start() {
 // Uses /<link> to open specific page, otherwise open default
 function openPageWithLink() {
     const currentPath = window.location.pathname.replace(/\/+$/, "").toLowerCase();
+    console.log(currentPath);
     if (currentPath === "/Myself") {setPage(true, 0);}
     else if (currentPath === "/SN-PDA") {setPage(true, 1);}
     else if (currentPath === "/Prairie") {setPage(true, 2);}
