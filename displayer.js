@@ -12,6 +12,7 @@ const pageMyself = document.getElementById("page-myself");
 const pageSnpda = document.getElementById("page-snpda");
 const pagePrairie = document.getElementById("page-prairie");
 const canvasCat = document.getElementById("canvas-cat");
+const footer = document.getElementById("footer");
 
 aboutButton.onclick = () => {setPage(false, 0)}
 project1Button.onclick = () => {setPage(false, 1)}
@@ -112,6 +113,7 @@ function start() {
     dealWithMobile();
     showLeftNav();
     setPage(true, 0);
+    animIn(footer, 400, 0.95);
     // Start listening to window resizing when done with opening anim
     window.addEventListener("resize", () => {dealWithMobile()})
 }
@@ -151,9 +153,9 @@ function dealWithMobile() {
 function setPage(first = false, page = 0) {
     let loadDelay;
     if (first) {loadDelay = 100}
-    else {loadDelay = 1500}
+    else {loadDelay = 150}
     
-    deactivateListItems(1600);
+    deactivateListItems(loadDelay);
 
     const oldPage = pageActive;
     pageActive = page;
@@ -167,8 +169,7 @@ function setPage(first = false, page = 0) {
         case 0:
             aboutButton.innerHTML = "Myself";
             aboutButton.classList.remove("list-item-selected")
-            const anim1 = animOut(pageMyself, 200, 0.98)
-            animHDD();
+            const anim1 = animOut(pageMyself, loadDelay - 10, 0.98)
             anim1.finished.then(() => {
                 pageMyself.style.display = "none";
             })
@@ -176,8 +177,7 @@ function setPage(first = false, page = 0) {
         case 1:
             project1Button.innerHTML = "SN-PDA";
             project1Button.classList.remove("list-item-selected")
-            const anim2 = animOut(pageSnpda, 200, 0.98)
-            animHDD();
+            const anim2 = animOut(pageSnpda, loadDelay - 10, 0.98)
             anim2.finished.then(() => {
                 pageSnpda.style.display = "none";
             })
@@ -185,8 +185,7 @@ function setPage(first = false, page = 0) {
         case 2:
             project2Button.innerHTML = "Prairie";
             project2Button.classList.remove("list-item-selected")
-            const anim3 = animOut(pagePrairie, 200, 0.98)
-            animHDD();
+            const anim3 = animOut(pagePrairie, loadDelay - 10, 0.98)
             anim3.finished.then(() => {
                 pagePrairie.style.display = "none";
             })
