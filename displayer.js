@@ -14,7 +14,8 @@ const pageSnpda = document.getElementById("page-snpda");
 const pagePrairie = document.getElementById("page-prairie");
 const pageTourney = document.getElementById("page-tourney");
 const canvasCat = document.getElementById("canvas-cat");
-const clockTxt = document.getElementById("clock-txt");
+const clockTxt = document.getElementById("clock-txt-1");
+const clockTxt2 = document.getElementById("clock-txt-2");
 const footer = document.getElementById("footer");
 
 aboutButton.onclick = () => {setPage(false, 0); setPath("/Myself")}
@@ -182,7 +183,8 @@ function startTime() {
     const Ltime = Ltoday.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
     const Ldate = Ltoday.toLocaleDateString([], { weekday: 'short' });
 
-    clockTxt.innerHTML =  "my time - " + Rtime + " " + Rdate.toLowerCase() + " | " + "your time - " + Ltime + " " + Ldate.toLowerCase();
+    clockTxt.innerHTML =  "my time - " + Rtime + " " + Rdate;
+    clockTxt2.innerHTML =  "your time - " + Ltime + " " + Ldate;
     setTimeout(startTime, 1000);
 }
 

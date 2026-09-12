@@ -236,10 +236,24 @@ p {
 
 #footer-right {
   display: flex;
-  padding-top: 2px;
   justify-content: end;
-  overflow: auto;
   width: 100%;
+}
+
+.clock-txt {
+  margin-left: 5px;
+  height: 100%;
+  display: flex;
+  padding-top: 2px;
+  justify-content: center;
+  overflow-x: auto;
+}
+
+#clock-divider {
+  margin-left: 6px;
+  margin-right: 4px;
+  padding-top: 3px;
+  color: lightgreen;
 }
 
 #logo-dust-1 {
