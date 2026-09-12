@@ -18,7 +18,7 @@ const clockTxt = document.getElementById("clock-txt-1");
 const clockTxt2 = document.getElementById("clock-txt-2");
 const footer = document.getElementById("footer");
 
-const developmentMode = true;
+const developmentMode = false;
 
 aboutButton.onclick = () => {setPage(false, 0); setPath("/Myself")}
 project1Button.onclick = () => {setPage(false, 1); setPath("/SN-PDA")}
