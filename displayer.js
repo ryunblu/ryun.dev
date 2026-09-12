@@ -18,6 +18,8 @@ const clockTxt = document.getElementById("clock-txt-1");
 const clockTxt2 = document.getElementById("clock-txt-2");
 const footer = document.getElementById("footer");
 
+const developmentMode = true;
+
 aboutButton.onclick = () => {setPage(false, 0); setPath("/Myself")}
 project1Button.onclick = () => {setPage(false, 1); setPath("/SN-PDA")}
 project2Button.onclick = () => {setPage(false, 2); setPath("/Prairie")}
@@ -138,6 +140,7 @@ function openPageWithLink(firstTime = true) {
 }
 
 function setPath(path) {
+    if (developmentMode) {return;}
     if (window.location.pathname !== path) {history.pushState(null, "", path)}
 }
 
